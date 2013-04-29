@@ -30,9 +30,9 @@ else
     exit 1
 fi
 # grab loud-apt*.deb
-wget -r -l1 --no-parent -A "loud-apt*.deb"  http://loud.lcsee.wvu.edu/stable/lpraring
+wget -r -l1 --no-parent -A "loud-apt*.deb"  http://loud.lcsee.wvu.edu/stable/lraring
 # install loud-apt*.deb package
-dpkg -i loud.lcsee.wvu.edu/stable/lprecise/loud*.deb
+dpkg -i loud.lcsee.wvu.edu/stable/lraring/loud*.deb
 # Grab LOUD package listings 
 apt-get -y update
 # Update the system
