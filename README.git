@@ -1,0 +1,30 @@
+Tips for using git.
+
+*) Setup your environment.
+
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+$ git config --global core.editor emacs
+
+*) Ready an environment for git.
+
+$ mkdir github.LOUD
+$ cd github.LOUD
+$ git init
+
+*) Cloning.
+
+$ insert commands here.
+
+*) Add a file
+
+$ touch README.git
+$ git add README.git
+$ git commit -m "Adding README.git"
+$ git push origin master
+
+*) Using remotes.  (Use clone unless you have write access)
+
+$ git remote add origin git@github.com:dkrovich/LOUD.git
+$ git pull origin master
+
