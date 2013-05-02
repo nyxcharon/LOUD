@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# usage: sudo bash loudify
+#
+# Description: 
+# This script will take a stock Ubuntu 13.04 install and
+# provision it to LOUD version "lraring"
+#
+
+#am I root?
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root.  Use sudo loudify" 1>&2
+   exit 1
+fi
+# check version
+VERSION=`lsb_release -r | awk '{ print $2; }'`
+if [ ${VERSION} != "13.04" ]; then
+   echo "Aborting.  Please use Ubuntu 13.04LTS as a base." 1>&2
+   exit 1
+fi
+#
+echo "Everything checks out ok..."
+echo "You may want to grab some popcorn, this process can take awhile."
+echo "Hit enter to continue, q to quit."
+read -s -n 1 key
+if [[ $key = "" ]]; then 
+    echo 'LOUDIFYING FOR THE WIN!'
+else
+    echo "Aborting."
+    exit 1
+fi
+# grab loud-apt*.deb
+wget -r -l1 --no-parent -A "loud-apt*.deb"  http://loud.lcsee.wvu.edu/stable/lraring
+# install loud-apt*.deb package
+dpkg -i loud.lcsee.wvu.edu/stable/lraring/loud*.deb
+# Grab LOUD package listings 
+apt-get -y update
+# Update the system
+apt-get -y dist-upgrade
+#install loud base
+apt-get -y install loud-base
+# Ask user to reboot
+echo "##############################################################"
+echo "Scripted completed.  Run sudo reboot to complete installation."
+echo "##############################################################"
