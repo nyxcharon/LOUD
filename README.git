@@ -14,7 +14,18 @@ $ git init
 
 *) Cloning.
 
-$ insert commands here.
+A. Cloning an empty repo
+Make a new folder and cd to it.
+$git init
+$git add file
+$git commit -m "Message"
+$git remote add origin https://github.com/username/reponame.git
+$git push -u origin master
+
+B. Cloning an existing repo
+$git clone https://github.com/username/reponame.git
+Make changes as needed.
+$git push
 
 *) Add a file
 
@@ -28,3 +39,17 @@ $ git push origin master
 $ git remote add origin git@github.com:dkrovich/LOUD.git
 $ git pull origin master
 
+*) Submitting a Pull Request
+
+1. Go to the github page of the repo you want to work on.
+2. Click the fork button. Github will then automagically make a new repo in your account.
+3. Clone your new repo
+4. Make changes and push them to your repo.
+5. Navigate to your github repo and click the pull request button, fill out the form.
+6. Wait for the upstream author(s) to approve or deny your request.
+
+For more information on pull request, see:
+https://help.github.com/articles/using-pull-requests
+
+For information on using git and github in general see:
+https://help.github.com/
