@@ -37,8 +37,8 @@ dpkg -i loud.lcsee.wvu.edu/stable/lraring/loud*.deb
 apt-get -y update
 # Update the system
 apt-get -y dist-upgrade
-#install loud base
-apt-get -y install loud-base
+#install loud base and loud-desktop
+apt-get -y install loud-base loud-desktop
 # Ask user to reboot
 echo "##############################################################"
 echo "Scripted completed.  Run sudo reboot to complete installation."
