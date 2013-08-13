@@ -1,0 +1,16 @@
+#! /bin/bash
+###########################################################
+# Upgrades an lprecise machine into an lraring machine
+#
+# Author: Bobby Martin
+###########################################################
+
+wget http://loud.lcsee.wvu.edu/stable/lraring/loud-apt_11.4.0_all.deb
+sudo dpkg -i loud-apt_11.4.0_all.deb
+
+sudo apt-get update
+sudo apt-get install -y loud-base
+sudo apt-get install -y loud-utils lbmbuilder
+
+sudo reloud raring -p /usr/share/lbmbuilder/preseed/lraring-external-desktop.cfg 
+
